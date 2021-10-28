@@ -1,0 +1,41 @@
+Include time estimates on each item
+Core features are essential to the behavior of the program
+Extra features are non-essential 
+
+
+OBJECTS: 
+User(watchlist, currentSelling, Mymessages)
+AdminUser()
+Auction(start_time,end_time,sellingObject,AuctionQuestionMessages, owner)
+SellingObject(minimumPrice, picture, description)
+
+VARIABLES: 
+int start_time // for auction
+int end_time //for auction- takes user int end_time and figures out which block this is 
+boolean auctionIsLive// for auction
+int highestBid// for auction
+arrayList watchlist // for user
+boolean bidJusthappened// for auction
+String message // for admin
+ArrayList myMessages// for user
+ArrayList userList
+ArrayList AuctionQuestionMessages// messages sent from people to seller appear here- belongs to the auction
+
+METHODS:
+addTime// adds 30 minutes to auction time if bidjusthappened = true, auctionIsLive is true  
+removeAuction(password, Auction)// only adminUser has this, checks if auctionIsLive
+addToWatchList(Auction)//user, if auctionISLive == false
+addBid(amount)// checks if user has this amount of money in the first place, if amount is greater than highestBid, if auction is still live
+addToMessageList(user)// admin can add people to the messaging list- people who have bid or added it to their watch list
+sendMessageToList(arraylist)// admin sends message to everyone on this list, message is added to myMessages for each user- can be any message or message that their item of interest has a new bid
+userToOwner(message)// adds message to auctionquestion messages, checks if user is on the userlist of given auction
+ownerToUser(message)// adds message to auctionquestionmessages, checks if owner matches with the owner variable for the given auction
+
+
+priorityList: 
+auction + methods
+user + methods 
+
+non:core messages + methods
+
+
