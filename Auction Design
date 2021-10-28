@@ -2,3 +2,11 @@ Features of Auction
 
 - Auctions have a minimum span of 2 days
 - After any person bids, there are 30 minutes added to the bidding time of the auction
+- Users have the ability to put an item up for auction
+- The users who put an item up for auction have the ability to set the minimum price, add a picture, which can be png or jpeg, and add a description that is less than 150 words.
+- An administrator has the ability to remove any auctions at any time which are deemed to be falsified (for example, a fake autograph, or a travel experience the owner cannot provide)
+- In the case of removal, anyone who has bid on this auction will not be charged. 
+- Each user will have a "watch list"; they can click a button by any auction to add it to their watch list
+- Each user will have a profile page with a message board of notifications only from the platform itself (users cannot direct message each other)
+- Each user who has bid on an item, or added it to their watch list, will get a push notification in their account inbox when someone has placed a new bid on that auction
+- Each auction has a chat board where you can direct message the owner of the item to ask questions
