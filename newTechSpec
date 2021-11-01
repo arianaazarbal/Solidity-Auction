@@ -1,0 +1,62 @@
+USER CLASS: 
+variables:
+watchList(arrayList)
+currentSelling(arraylist)
+mymessages(arraylist)
+
+Methods:
+userToOwner(message, Auction)// adds message to auctionquestion messages, checks if user is on the userlist of given auction
+ownerToUser(message, Auction)// adds message to auctionquestionmessages, checks if account is the owner is the owner of the auction
+
+
+OBJECT TO BE SOLD CLASS: 
+variable:
+minimumPrice (int)
+picture(picture of item)
+description(String)
+owner(user)
+
+METHODS:
+addBid(amount)// if auctionISLive= true, adds 30 minutes to the endtime
+addToWatchList(Auction) if auctionISLive == false
+
+
+AUCTION CLASS: 
+variables:
+start_time(int)
+ArrayList userList
+end_time(int)
+auctionIsLive(boolean)
+sellingObject (Object)
+AuctionQuestionMessages()
+int highestBid// for auction
+boolean bidJusthappened// for auction
+ArrayList AuctionQuestionMessages// messages sent from people to seller appear here- belongs to the auction
+
+
+
+ADMIN USER CLASS: 
+variables:
+
+
+methods: 
+removeAuction(password, Auction)// only adminUser has this, checks if auctionIsLive
+addToMessageList(user)// admin can add people to the messaging list- people who have bid or added it to their watch list
+sendMessageToList(arraylist)// admin sends message to everyone on this list, message is added to myMessages for each user- can be any message or message that their 
+
+
+
+
+
+
+
+
+
+
+
+
+priorityList: 
+auction + methods
+user + methods 
+
+non:core messages + methods
