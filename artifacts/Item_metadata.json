@@ -1,0 +1,92 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_description",
+						"type": "string"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "getOwner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transfer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"title": "Item",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Item.sol": "Item"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Item.sol": {
+			"keccak256": "0x51ee79d7bd917e81feef4d776113ed774561e7f18498fb966ee28a61017f7e9b",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://c657693363523aa3f254d46f17baf321bc942e7a960032668015f54842c02b21",
+				"dweb:/ipfs/Qmey2A5HDvn9UrP171KLYaHLiYCW5h7mhapDcLgqJzfJx9"
+			]
+		},
+		"User.sol": {
+			"keccak256": "0xc31c0a0431ebe77c53fdbc09cbd89e9dfef6b13b26f99ace9894190049770871",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://f79848ef981d95887c3597d2638fcd357e3090ae0a0f2d110ace250d1e240276",
+				"dweb:/ipfs/QmVWHHeujpHiheXyKeUqPcJgW9vmGBKuoKDMsHdK2iUJQG"
+			]
+		}
+	},
+	"version": 1
+}

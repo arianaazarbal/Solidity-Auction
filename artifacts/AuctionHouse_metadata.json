@@ -1,0 +1,140 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "contract User",
+						"name": "u",
+						"type": "address"
+					},
+					{
+						"internalType": "contract Auction",
+						"name": "a",
+						"type": "address"
+					},
+					{
+						"internalType": "int256",
+						"name": "bidPrice",
+						"type": "int256"
+					}
+				],
+				"name": "bid",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "contract User",
+						"name": "u",
+						"type": "address"
+					},
+					{
+						"internalType": "contract Item",
+						"name": "i",
+						"type": "address"
+					},
+					{
+						"internalType": "int256",
+						"name": "_startTime",
+						"type": "int256"
+					},
+					{
+						"internalType": "int256",
+						"name": "_endtime",
+						"type": "int256"
+					},
+					{
+						"internalType": "int256",
+						"name": "minPrice",
+						"type": "int256"
+					}
+				],
+				"name": "createAuction",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getAuctions",
+				"outputs": [
+					{
+						"internalType": "contract Auction[]",
+						"name": "",
+						"type": "address[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"title": "Auction",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"AuctionHouse.sol": "AuctionHouse"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Auction.sol": {
+			"keccak256": "0x5d327c9363910c67cc396128d3a4d2539b0abc2c933d654f8c33fe0d52899142",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://7777521f7c3d7537c4f1576dc7c1d9126e06ef68dd6bdeed69c0f3862f83431b",
+				"dweb:/ipfs/QmSCthHrCV2rWRYQwdaXu8XS9QSzWTZotoR46KTLQbXiXo"
+			]
+		},
+		"AuctionHouse.sol": {
+			"keccak256": "0x52639a3688d3f354848f447b6c47167ee3ffca4dfd81a6a8e93b02c9be5b5daa",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://e004928a2f7998f058db185345bf782cfbe0c98b7cc4922c1ef22ed12d141f2a",
+				"dweb:/ipfs/Qmc8owrrFgJ4UtrR3xoW9rn4oU9ftPhScgA743eaqpt9vL"
+			]
+		},
+		"Item.sol": {
+			"keccak256": "0x51ee79d7bd917e81feef4d776113ed774561e7f18498fb966ee28a61017f7e9b",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://c657693363523aa3f254d46f17baf321bc942e7a960032668015f54842c02b21",
+				"dweb:/ipfs/Qmey2A5HDvn9UrP171KLYaHLiYCW5h7mhapDcLgqJzfJx9"
+			]
+		},
+		"User.sol": {
+			"keccak256": "0x918dbe516afd89b98d4fe14607ac9243c672673b75b223d3c453e9c05dfe45da",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://729a8979f62bf7298095382c7f471644e705b279373ae54be3d4a52a04ae1a12",
+				"dweb:/ipfs/QmPig1itiCC9xcJahCYHf4C481mjHjz3Ta2p2w14Ai47cY"
+			]
+		}
+	},
+	"version": 1
+}

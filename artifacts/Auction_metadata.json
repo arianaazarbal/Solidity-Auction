@@ -1,0 +1,218 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "int256",
+						"name": "_startTime",
+						"type": "int256"
+					},
+					{
+						"internalType": "int256",
+						"name": "_endtime",
+						"type": "int256"
+					},
+					{
+						"internalType": "contract Item",
+						"name": "_sellingObject",
+						"type": "address"
+					},
+					{
+						"internalType": "contract User",
+						"name": "_originalOwner",
+						"type": "address"
+					},
+					{
+						"internalType": "int256",
+						"name": "minPrice",
+						"type": "int256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "checkTime",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getCurrentHighBid",
+				"outputs": [
+					{
+						"internalType": "contract User",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getEndTime",
+				"outputs": [
+					{
+						"internalType": "int256",
+						"name": "",
+						"type": "int256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getHighestBid",
+				"outputs": [
+					{
+						"internalType": "int256",
+						"name": "",
+						"type": "int256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getIsLive",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getObject",
+				"outputs": [
+					{
+						"internalType": "contract Item",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getOriginalOwner",
+				"outputs": [
+					{
+						"internalType": "contract User",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getStartTime",
+				"outputs": [
+					{
+						"internalType": "int256",
+						"name": "",
+						"type": "int256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "contract User",
+						"name": "newHighUser",
+						"type": "address"
+					}
+				],
+				"name": "setCurrentHighBid",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "int256",
+						"name": "newHigh",
+						"type": "int256"
+					}
+				],
+				"name": "setHighestBid",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"title": "Auction",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Auction.sol": "Auction"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Auction.sol": {
+			"keccak256": "0x5d327c9363910c67cc396128d3a4d2539b0abc2c933d654f8c33fe0d52899142",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://7777521f7c3d7537c4f1576dc7c1d9126e06ef68dd6bdeed69c0f3862f83431b",
+				"dweb:/ipfs/QmSCthHrCV2rWRYQwdaXu8XS9QSzWTZotoR46KTLQbXiXo"
+			]
+		},
+		"Item.sol": {
+			"keccak256": "0x51ee79d7bd917e81feef4d776113ed774561e7f18498fb966ee28a61017f7e9b",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://c657693363523aa3f254d46f17baf321bc942e7a960032668015f54842c02b21",
+				"dweb:/ipfs/Qmey2A5HDvn9UrP171KLYaHLiYCW5h7mhapDcLgqJzfJx9"
+			]
+		},
+		"User.sol": {
+			"keccak256": "0x54a5a013462d8e0e0e54be941a3a72210863440d3ac1e561b8f5c53d5836093d",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://347bc71783f5059c0ab2167359232ca7bb1798e456d9eb5d3e3116b5ae653ac3",
+				"dweb:/ipfs/QmYp51Xav2dvk4pyBVzYfNaWoozLjVJm8c2RUE8rNGLh5B"
+			]
+		}
+	},
+	"version": 1
+}

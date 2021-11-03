@@ -7,18 +7,16 @@ mymessages(arraylist)
 Methods:
 userToOwner(message, Auction)// adds message to auctionquestion messages, checks if user is on the userlist of given auction
 ownerToUser(message, Auction)// adds message to auctionquestionmessages, checks if account is the owner is the owner of the auction
+addToWatchList(Auction) if auctionISLive == false
 
 
 OBJECT TO BE SOLD CLASS: 
 variable:
-minimumPrice (int)
 picture(picture of item)
 description(String)
 owner(user)
-
-METHODS:
-addBid(amount)// if auctionISLive= true, adds 30 minutes to the endtime
-addToWatchList(Auction) if auctionISLive == false
+minimumPrice (int) //Kevin's comment: I think having the minimum price just be something that the User does when making the auction is better
+instead of a variable in the item, since price changes and we shouldn't have things just stick to one price
 
 
 AUCTION CLASS: 
@@ -32,6 +30,10 @@ AuctionQuestionMessages()
 int highestBid// for auction
 boolean bidJusthappened// for auction
 ArrayList AuctionQuestionMessages// messages sent from people to seller appear here- belongs to the auction
+
+
+METHODS:
+addBid(amount)// if auctionISLive= true, adds 30 minutes to the endtime
 
 
 
