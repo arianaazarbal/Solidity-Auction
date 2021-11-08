@@ -33,8 +33,8 @@ ArrayList AuctionQuestionMessages// messages sent from people to seller appear h
 
 
 METHODS:
-addBid(amount)// if auctionISLive= true, adds 30 minutes to the endtime
-
+makeBid(item, amount)// if auctionISLive= true and amount>current price of item, calls addTime
+addTime(item)//adds an amount of time to the auction (30 minutes)
 
 
 ADMIN USER CLASS: 

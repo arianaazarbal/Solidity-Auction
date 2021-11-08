@@ -80,11 +80,11 @@
 			]
 		},
 		"User.sol": {
-			"keccak256": "0xc31c0a0431ebe77c53fdbc09cbd89e9dfef6b13b26f99ace9894190049770871",
+			"keccak256": "0x918dbe516afd89b98d4fe14607ac9243c672673b75b223d3c453e9c05dfe45da",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://f79848ef981d95887c3597d2638fcd357e3090ae0a0f2d110ace250d1e240276",
-				"dweb:/ipfs/QmVWHHeujpHiheXyKeUqPcJgW9vmGBKuoKDMsHdK2iUJQG"
+				"bzz-raw://729a8979f62bf7298095382c7f471644e705b279373ae54be3d4a52a04ae1a12",
+				"dweb:/ipfs/QmPig1itiCC9xcJahCYHf4C481mjHjz3Ta2p2w14Ai47cY"
 			]
 		}
 	},
