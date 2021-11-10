@@ -11,7 +11,6 @@ contract User {
     
     
     address Adr;
-    int money;
     Item[] ownedItems;
     
     modifier owns() {
@@ -21,21 +20,17 @@ contract User {
     
     constructor(){
         Adr = msg.sender;
-        money = 10;
     }
     
     function getAdr() public view returns(address){
         return Adr;
     }
-    function getMoney() public view returns(int){
-        return money;
-    }
     function getOwnedItems() public view returns(Item[] memory){
         return ownedItems;
     }
     
-    function createItem(string memory description) public owns{
-        Item newitem = new Item(description);
+    function createItem(string memory name, string memory symbol,string memory description) public owns{
+        Item newitem = new Item(name,symbol,description);
         ownedItems.push(newitem);
     }
     

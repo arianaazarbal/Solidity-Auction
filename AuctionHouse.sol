@@ -13,13 +13,25 @@ contract AuctionHouse {
     
     Auction[] auctions;
     
-    function createAuction(User u, Item i, int _startTime, int _endtime,  int minPrice) public {
+    modifier auctionIsLive(Auction a) {
+        require(a.getIsLive(), "Auction Isn't Live");
+        _;
+    }
+    modifier hasEnoughMoney(Auction a, uint bidPrice)
+    {
+        require(address(this).balance>=bidPrice);
+        _;
+    }
+    
+    function createAuction(Item i, int _startTime, int _endtime,  uint minPrice) public {
+        User u = User(msg.sender);
+        require(msg.sender==i.ownerOf());
         Auction newAuction = new Auction(_startTime, _endtime, i, u, minPrice);
         auctions.push(newAuction);
     }
-    function bid(User u, Auction a, int bidPrice) public {
-        require(a.getIsLive());
-        //require(u.getMoney()>=bidPrice);
+    function makeBid(Auction a, uint bidPrice) public auctionIsLive(a){
+        User u = User(msg.sender);
+        
         a.setHighestBid(bidPrice);
         a.setCurrentHighBid(u);
     }

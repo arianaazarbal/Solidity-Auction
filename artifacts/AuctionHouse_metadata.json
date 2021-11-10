@@ -8,34 +8,6 @@
 			{
 				"inputs": [
 					{
-						"internalType": "contract User",
-						"name": "u",
-						"type": "address"
-					},
-					{
-						"internalType": "contract Auction",
-						"name": "a",
-						"type": "address"
-					},
-					{
-						"internalType": "int256",
-						"name": "bidPrice",
-						"type": "int256"
-					}
-				],
-				"name": "bid",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "contract User",
-						"name": "u",
-						"type": "address"
-					},
-					{
 						"internalType": "contract Item",
 						"name": "i",
 						"type": "address"
@@ -73,6 +45,24 @@
 				],
 				"stateMutability": "view",
 				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "contract Auction",
+						"name": "a",
+						"type": "address"
+					},
+					{
+						"internalType": "int256",
+						"name": "bidPrice",
+						"type": "int256"
+					}
+				],
+				"name": "makeBid",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -103,6 +93,22 @@
 		"remappings": []
 	},
 	"sources": {
+		"@openzeppelin/contracts/token/ERC721/IERC721.sol": {
+			"keccak256": "0xf101e8720213560fab41104d53b3cc7ba0456ef3a98455aa7f022391783144a0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://3e7820bcf567e6892d937c3cb10db263a4042e446799bca602535868d822384e",
+				"dweb:/ipfs/QmPG2oeDjKncqsEeyYGjAN7CwAJmMgHterXGGnpzhha4z7"
+			]
+		},
+		"@openzeppelin/contracts/utils/introspection/IERC165.sol": {
+			"keccak256": "0xa28007762d9da9db878dd421960c8cb9a10471f47ab5c1b3309bfe48e9e79ff4",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://796ab6e88af7bf0e78def0f059310c903af6a312b565344e0ff524a0f26e81c6",
+				"dweb:/ipfs/QmcsVgLgzWdor3UnAztUkXKNGcysm1MPneWksF72AvnwBx"
+			]
+		},
 		"Auction.sol": {
 			"keccak256": "0x5d327c9363910c67cc396128d3a4d2539b0abc2c933d654f8c33fe0d52899142",
 			"license": "GPL-3.0",
@@ -112,19 +118,19 @@
 			]
 		},
 		"AuctionHouse.sol": {
-			"keccak256": "0x52639a3688d3f354848f447b6c47167ee3ffca4dfd81a6a8e93b02c9be5b5daa",
+			"keccak256": "0x2121ef0b925cbf0420a0c1439482dcaa8da5ef5ab442ef7de4827873761414a0",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://e004928a2f7998f058db185345bf782cfbe0c98b7cc4922c1ef22ed12d141f2a",
-				"dweb:/ipfs/Qmc8owrrFgJ4UtrR3xoW9rn4oU9ftPhScgA743eaqpt9vL"
+				"bzz-raw://933195f032934d71f574e1421878d4cc82867e2aabd4248396e9a2ab89c64eaf",
+				"dweb:/ipfs/QmTE4ybt45TKatqRoWbXsRiNmNfZ3S19vft3GMajjiU1qg"
 			]
 		},
 		"Item.sol": {
-			"keccak256": "0x51ee79d7bd917e81feef4d776113ed774561e7f18498fb966ee28a61017f7e9b",
+			"keccak256": "0x0702cea9e785c51456617cd33f1c6f8d965b07b1e508cc5ff8d3c9c5a8bb458b",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://c657693363523aa3f254d46f17baf321bc942e7a960032668015f54842c02b21",
-				"dweb:/ipfs/Qmey2A5HDvn9UrP171KLYaHLiYCW5h7mhapDcLgqJzfJx9"
+				"bzz-raw://aff2596d0bcb2f943a3f3316320502389024d146d3513ba9f7396a9d8fe33e84",
+				"dweb:/ipfs/QmPXKj8ky9WwQ9beVGhWKHznRtCkhxRpK9JaGGrDhAunt5"
 			]
 		},
 		"User.sol": {
