@@ -56,6 +56,23 @@
 				"type": "event"
 			},
 			{
+				"stateMutability": "payable",
+				"type": "fallback"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "addMoney",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "getCurrentHighBidder",
 				"outputs": [
@@ -320,11 +337,11 @@
 			]
 		},
 		"Auction.sol": {
-			"keccak256": "0x0c3fc679150db24a134f88f50ff1c5b232ef337d3c1354b2b4f4dced818e834b",
+			"keccak256": "0x4cd1696243103a6b58a238d5bd7077cdfdaf611767d4b17278a5ad64003c49ef",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://94d7e56facfa564ab5095a893fe19982f21e7b878a67bbb708fd5823fcb3df67",
-				"dweb:/ipfs/QmeAmh6XpV3dgq8uPavvpEeBjAZy2nQHJS7mNmnTZ3Rfhk"
+				"bzz-raw://afdcf1f6fd9270af37a02242ad65d106a213d65a4fa405f7a164bec06ff7fe94",
+				"dweb:/ipfs/QmefyrxGsPn2fq2DAZ5LFAXMh2kRHbuo5n2vXsk1wE69v4"
 			]
 		},
 		"Item.sol": {
@@ -336,11 +353,11 @@
 			]
 		},
 		"User.sol": {
-			"keccak256": "0x5438007c305676dc273b7585eb98b5bd7842161bfca224d2f92b41515e985def",
+			"keccak256": "0x02cfc99672e4b791e8bdc85452c047995fb5538fdd4a9071d98d045f3648dde1",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://73d9bb7588251f9e1e9639ce18b50aedb585f70b6c7fdf0c993bd4a16a213c7e",
-				"dweb:/ipfs/QmUqf1nPXVu5HtgmkLzQ95AKo3vAgriDFah9RXwx9TwMg1"
+				"bzz-raw://9e71a433b7464fa694c4f79db16e865211cf6e11d042cc9078d682c952e2dbb6",
+				"dweb:/ipfs/QmZZ7q9rgLvrsJMdbeVa5625QhgRrnWw5n8as6E8fSyErG"
 			]
 		}
 	},

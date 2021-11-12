@@ -60,13 +60,17 @@ contract Auction {
         currentHighBidder = seller;
     }
     
+    fallback () external payable{
+        
+    }
+    
     event Win(address winner, uint256 amount);
     
     function win() external payable isSeller{
         nft.approve(currentHighBidder,nftId);
         nft.safeTransferFrom(seller, currentHighBidder,nftId);
         
-        
+        //payable(currentHighBidder).transfer(highestBid);
         seller.transfer(highestBid);
         
         emit Win(msg.sender, highestBid);
@@ -81,6 +85,9 @@ contract Auction {
         end_time+=30;
     }
     
+    function addMoney(uint amount) public payable{
+        payable(msg.sender).transfer(amount);
+    }
     
     function getMyBalance() public view returns(uint){
         return address(this).balance;
