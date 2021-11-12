@@ -12,17 +12,13 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 contract Item is ERC721{
 
     string description;
-    address owner;
-    
-    
-    modifier owns() {
-        require(msg.sender==owner, "You don't own this silly");
-        _;
-    }
     
     constructor(string memory name, string memory symbol, string memory _description) ERC721(name,symbol){
         description = _description;
-        owner = msg.sender;
+    }
+    
+    function getDescription() public view returns(string memory){
+        return description;
     }
 
 }

@@ -158,6 +158,19 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "getDescription",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "address",
@@ -497,20 +510,28 @@
 				"dweb:/ipfs/QmcsVgLgzWdor3UnAztUkXKNGcysm1MPneWksF72AvnwBx"
 			]
 		},
-		"Item.sol": {
-			"keccak256": "0xcc4867f06e0af266083f0ad10300bfa56b9fad46b0fd1ba81c4f0aaa7e7b3fa7",
+		"Auction.sol": {
+			"keccak256": "0x6a128420c026631a2ddd187da62f43431843a77bae3e1ddd5bc8dfc8b8c46df3",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://1763bf4a628524ff5f4f2cd0a503b2c50151e9fb1710db4431f07b0cd2bf2e9b",
-				"dweb:/ipfs/QmX5U1w9c1RVi6Cb1zMBiFWjSXRyibi5fv1LUtgSdsBm9q"
+				"bzz-raw://34c33a2d3f76054fb9ec5edf21deb72727b74635355894a0bc1e2274b5cc5a54",
+				"dweb:/ipfs/QmY2scqVtnum2gJKghQv1oyfLCFSwv18ubiYvzncvaah1F"
+			]
+		},
+		"Item.sol": {
+			"keccak256": "0x01fff7f6af9f42b54ffe19edb3360e2c4049e0b3b85d500b88bd1fdac7e1fe98",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://f6da2bf2e5abcbb0226a84ca804e24292af71bd1828658e554e37cc6e4b2a65a",
+				"dweb:/ipfs/QmYJZuyFvSk7saAUwtCCLSaN1X1A4A4Ps2hqxHPa2tf9NV"
 			]
 		},
 		"User.sol": {
-			"keccak256": "0xc17631bb7ccc00785bf1f6c1f24cc34c159f57002c0908e21611c42d0dd26ccd",
+			"keccak256": "0x0e465a90035061d64c9050c3b8d07db7ef3562221094c725d7c6f876a4ed0829",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://619fcc49045ca8ab0850daa52014741b2a6b3860f5b54e8d7e0efbf1e416d59a",
-				"dweb:/ipfs/QmQ48z2YN1osHbGc4ZFyt568CjWdDXGsbGgYxe6omiRr4M"
+				"bzz-raw://cc4efb674c77dfb701e42826b6653dc585961e04325e1e36bafee66cba6e2b84",
+				"dweb:/ipfs/QmUgbsDmZhTt65BUbRkwNMn1nUKHSmgWwxncgSMVgnvjpG"
 			]
 		}
 	},

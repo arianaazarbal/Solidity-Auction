@@ -3,6 +3,7 @@
 pragma solidity >=0.7.0 <0.9.0;
 
 import "./Item.sol";
+import "./Auction.sol";
 
 /**
  * @title User
@@ -11,9 +12,9 @@ contract User {
     
     
     address Adr;
-    Item[] ownedItems;
+    Auction[] watchList;
     
-    modifier owns() {
+    modifier isOwner() {
         require(msg.sender==Adr);
         _;
     }
@@ -25,13 +26,14 @@ contract User {
     function getAdr() public view returns(address){
         return Adr;
     }
-    function getOwnedItems() public view returns(Item[] memory){
-        return ownedItems;
+    
+    
+    function getWatchList() public view returns(Auction[] memory){
+        return watchList;
     }
     
-    function createItem(string memory name, string memory symbol,string memory description) public owns{
-        Item newitem = new Item(name,symbol,description);
-        ownedItems.push(newitem);
+    function addToWatchList(Auction a) public isOwner{
+        watchList.push(a);
     }
     
 }

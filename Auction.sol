@@ -4,70 +4,123 @@ pragma solidity >=0.7.0 <0.9.0;
 
 import "./User.sol";
 import "./Item.sol";
+import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 /**
  * @title Auction
  */
 contract Auction {
 
-    int start_time;
-    int end_time;
+    uint start_time;
+    uint end_time;
     bool auctionIsLive;
-    Item sellingObject;
-    User originalOwner;
-    int highestBid;
-    User currentHighBid;
     
     
-    constructor(int _startTime, int _endtime, Item _sellingObject, User _originalOwner, int minPrice){
+    Item public immutable nft;
+    uint public immutable nftId;
+    
+    
+    address payable public seller;
+    
+    
+    uint highestBid;
+    address currentHighBidder;
+    
+    
+    modifier isSeller() {
+        require(msg.sender==seller);
+        _;
+    }
+    modifier auctionLive() {
+        require(auctionIsLive, "Auction Isn't Live");
+        _;
+    }
+    modifier hasEnoughMoney(uint bidPrice)
+    {
+        require(address(this).balance>=bidPrice, "You don't have enough money");
+        _;
+    }
+    modifier highEnoughBid(uint bidPrice)
+    {
+        require(bidPrice>highestBid, "Bid is lower than current highest bid");
+        _;
+    }
+    
+    constructor(uint _startTime, uint _endtime, Item _nft, uint _nftId, uint minPrice){
         start_time =_startTime;
         end_time = _endtime;
-        auctionIsLive = false;
-        sellingObject = _sellingObject;
-        originalOwner = _originalOwner;
+        auctionIsLive = true;
+        
+        nft = _nft;
+        
+        nftId = _nftId;
+        seller = payable(msg.sender);
         highestBid = minPrice;
-        currentHighBid = _originalOwner;
-        checkTime();
+        currentHighBidder = seller;
     }
     
-    function checkTime() public{
-        auctionIsLive = true;
+    event Win(address winner, uint256 amount);
+    
+    function win() external payable isSeller{
+        nft.approve(currentHighBidder,nftId);
+        nft.safeTransferFrom(seller, currentHighBidder,nftId);
+        
+        
+        seller.transfer(highestBid);
+        
+        emit Win(msg.sender, highestBid);
     }
+    
+    function makeBid(uint bidPrice) public auctionLive hasEnoughMoney(bidPrice) highEnoughBid(bidPrice) {
+        setHighestBid(bidPrice);
+        setCurrentHighBidder(msg.sender);
+    }
+    
+    function addTime() internal{
+        end_time+=30;
+    }
+    
+    
+    function getMyBalance() public view returns(uint){
+        return address(this).balance;
+    }
+    
     
     function getIsLive() public view returns(bool){
         return auctionIsLive;
     }
     
-    function getStartTime() public view returns(int){
+    function getStartTime() public view returns(uint){
         return start_time;
     }
     
-    function getEndTime() public view returns(int){
+    function getEndTime() public view returns(uint){
         return end_time;
     }
     
     function getObject() public view returns(Item){
-        return sellingObject;
+        return nft;
     }
     
-    function getOriginalOwner() public view returns(User){
-        return originalOwner;
+    function getSeller() public view returns(address){
+        return seller;
     }
     
-    function getHighestBid() public view returns(int){
+    function getHighestBid() public view returns(uint){
         return highestBid;
     }
     
-    function getCurrentHighBid() public view returns(User){
-        return currentHighBid;
+    function getCurrentHighBidder() public view returns(address){
+        return currentHighBidder;
     }
     
-    function setHighestBid(int newHigh) public{
+    function setHighestBid(uint newHigh) internal{
         highestBid = newHigh;
     }
     
-    function setCurrentHighBid(User newHighUser) public{
-        currentHighBid = newHighUser;
+    function setCurrentHighBidder(address newHighUser) internal{
+        currentHighBidder = newHighUser;
     }
     
     
