@@ -84,7 +84,6 @@ contract Auction {
         
         if (currentHighBidder != address(0)) {
             nft.safeTransferFrom(address(this),currentHighBidder, nftId);
-            seller.transfer(highestBid);
         }
         emit End(currentHighBidder,highestBid);
     }
