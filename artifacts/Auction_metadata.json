@@ -18,16 +18,6 @@
 						"type": "uint256"
 					},
 					{
-						"internalType": "contract Item",
-						"name": "_nft",
-						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "_nftId",
-						"type": "uint256"
-					},
-					{
 						"internalType": "uint256",
 						"name": "minPrice",
 						"type": "uint256"
@@ -52,22 +42,12 @@
 						"type": "uint256"
 					}
 				],
-				"name": "Win",
+				"name": "End",
 				"type": "event"
 			},
 			{
-				"stateMutability": "payable",
-				"type": "fallback"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "amount",
-						"type": "uint256"
-					}
-				],
-				"name": "addMoney",
+				"inputs": [],
+				"name": "end",
 				"outputs": [],
 				"stateMutability": "payable",
 				"type": "function"
@@ -142,7 +122,20 @@
 				"name": "getObject",
 				"outputs": [
 					{
-						"internalType": "contract Item",
+						"internalType": "contract ERC721",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getOwner",
+				"outputs": [
+					{
+						"internalType": "address",
 						"name": "",
 						"type": "address"
 					}
@@ -194,7 +187,7 @@
 				"name": "nft",
 				"outputs": [
 					{
-						"internalType": "contract Item",
+						"internalType": "contract ERC721",
 						"name": "",
 						"type": "address"
 					}
@@ -229,10 +222,21 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "win",
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_nft",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_nftId",
+						"type": "uint256"
+					}
+				],
+				"name": "setNFT",
 				"outputs": [],
-				"stateMutability": "payable",
+				"stateMutability": "nonpayable",
 				"type": "function"
 			}
 		],
@@ -337,11 +341,11 @@
 			]
 		},
 		"Auction.sol": {
-			"keccak256": "0x4cd1696243103a6b58a238d5bd7077cdfdaf611767d4b17278a5ad64003c49ef",
+			"keccak256": "0xb51f1ad51fc8c964b7c2c834bf3e6d2913036fba70667d51cec0ee7eacbb1342",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://afdcf1f6fd9270af37a02242ad65d106a213d65a4fa405f7a164bec06ff7fe94",
-				"dweb:/ipfs/QmefyrxGsPn2fq2DAZ5LFAXMh2kRHbuo5n2vXsk1wE69v4"
+				"bzz-raw://3e6fe31a5b4b757e07e14b7ed9d6463d4fb61186bceae80b6edb8775b7faa94a",
+				"dweb:/ipfs/QmXtVsJinUNQ8HevTg637KJ2nuW2NwcYiMUPQ7pB8zvBEo"
 			]
 		},
 		"Item.sol": {

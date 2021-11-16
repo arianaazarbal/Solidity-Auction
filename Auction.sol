@@ -17,8 +17,8 @@ contract Auction {
     bool auctionIsLive;
     
     
-    Item public immutable nft;
-    uint public immutable nftId;
+    ERC721 public nft;
+    uint public nftId;
     
     
     address payable public seller;
@@ -38,7 +38,7 @@ contract Auction {
     }
     modifier hasEnoughMoney(uint bidPrice)
     {
-        require(address(this).balance>=bidPrice, "You don't have enough money");
+        require(address(msg.sender).balance>=bidPrice, "You don't have enough money");
         _;
     }
     modifier highEnoughBid(uint bidPrice)
@@ -47,33 +47,46 @@ contract Auction {
         _;
     }
     
-    constructor(uint _startTime, uint _endtime, Item _nft, uint _nftId, uint minPrice){
+    constructor(uint _startTime, uint _endtime,  uint minPrice){
+        start_time =_startTime;
+        end_time = _endtime;
+        auctionIsLive = true;
+        seller = payable(msg.sender);
+        highestBid = minPrice;
+    }
+    
+    /*constructor(uint _startTime, uint _endtime, address _nft, uint _nftId, uint minPrice){
         start_time =_startTime;
         end_time = _endtime;
         auctionIsLive = true;
         
-        nft = _nft;
+        nft = ERC721(_nft);
         
         nftId = _nftId;
         seller = payable(msg.sender);
         highestBid = minPrice;
-        currentHighBidder = seller;
+        
+    }*/
+    
+    
+    /*fallback () external payable{
+        
+    }*/
+    
+    event End(address winner, uint256 amount);
+    function setNFT(address _nft, uint _nftId) external {
+        nft = ERC721(_nft);
+        
+        nftId = _nftId;
     }
     
-    fallback () external payable{
+    function end() external payable{
         
-    }
-    
-    event Win(address winner, uint256 amount);
-    
-    function win() external payable isSeller{
-        nft.approve(currentHighBidder,nftId);
-        nft.safeTransferFrom(seller, currentHighBidder,nftId);
-        
-        //payable(currentHighBidder).transfer(highestBid);
-        seller.transfer(highestBid);
-        
-        emit Win(msg.sender, highestBid);
+        if (currentHighBidder != address(0)) {
+            nft.safeTransferFrom(address(this),currentHighBidder, nftId);
+            seller.transfer(highestBid);
+        }
+        emit End(currentHighBidder,highestBid);
     }
     
     function makeBid(uint bidPrice) public auctionLive hasEnoughMoney(bidPrice) highEnoughBid(bidPrice) {
@@ -84,13 +97,11 @@ contract Auction {
     function addTime() internal{
         end_time+=30;
     }
-    
-    function addMoney(uint amount) public payable{
-        payable(msg.sender).transfer(amount);
+    function getOwner() public view returns(address){
+        return nft.ownerOf(nftId);
     }
-    
     function getMyBalance() public view returns(uint){
-        return address(this).balance;
+        return address(msg.sender).balance;
     }
     
     
@@ -106,7 +117,7 @@ contract Auction {
         return end_time;
     }
     
-    function getObject() public view returns(Item){
+    function getObject() public view returns(ERC721){
         return nft;
     }
     
